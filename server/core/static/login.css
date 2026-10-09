@@ -60,6 +60,7 @@ input[type="password"] {
 .btn.btn-primary:active {
   background: var(--ls-primary);
   transform: translateY(0.075rem);
+  color: var(--ls-on-primary);
 }
 
 .btn.btn-primary:hover {
