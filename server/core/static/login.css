@@ -101,7 +101,7 @@ input[role="switch"]:focus:not(:checked) {
   box-shadow: rgba(var(--ls-on-primary), .25) 0px 0px 0px 4px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 896px) {
   body.flex-column {
     flex-direction: row !important;
     padding: 2%;
