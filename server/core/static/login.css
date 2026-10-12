@@ -15,7 +15,8 @@ html {
   --ls-on-primary: #fff;
   --ls-muted-bg: #e5e5e5;
   --ls-switch-bg: #ddd;
-  --ls-border: oklch(0.985104 1.3328e-7 none / 0.1);
+  --ls-border: lab(90.952 0 -0.0000119209);
+  --ls-shadow: rgb(0, 0, 0, .25);
 }
 
 html[data-bs-theme="dark"] {
@@ -25,7 +26,8 @@ html[data-bs-theme="dark"] {
   --ls-on-primary: rgb(23, 23, 23);
   --ls-muted-bg: rgb(51, 51, 51);
   --ls-switch-bg: #555;
-  --ls-border: oklch(0.985104 1.3328e-7 none / 0.1);
+  --ls-border: lab(100 0 0 / 0.15);
+  --ls-shadow: rgb(255, 255, 255, .25);
 }
 
 html,
@@ -47,6 +49,8 @@ h2 {
 input[type="text"],
 input[type="password"] {
   border-radius: 0.75rem;
+  border-color: var(--ls-border) !important;
+  box-shadow: none !important;
 }
 
 .btn.btn-primary {
@@ -67,11 +71,6 @@ input[type="password"] {
   opacity: 0.8;
 }
 
-input[type="text"]:focus {
-  box-shadow: 0 0 0 .25rem rgba(var(--ls-on-primary), .25);
-  border-color: var(--ls-border);
-}
-
 input[role="switch"] {
   border: none;
   background-color: var(--ls-switch-bg);
@@ -89,16 +88,6 @@ html[data-bs-theme="dark"] input[role="switch"]:checked {
 
 input[role="switch"]:checked {
   background-color: var(--ls-primary);
-}
-
-input[role="switch"]:focus {
-  border-color: rgba(var(--ls-on-primary), .25);
-  box-shadow: rgba(var(--ls-on-primary), .25) 0px 0px 0px 4px;
-}
-
-input[role="switch"]:focus:not(:checked) {
-  border-color: rgba(var(--ls-on-primary), .25);
-  box-shadow: rgba(var(--ls-on-primary), .25) 0px 0px 0px 4px;
 }
 
 @media (min-width: 896px) {
@@ -123,7 +112,7 @@ body {
   background-color: var(--ls-background);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 896px) {
   body.flex-column {
     background-image: url(/pkg/external/background.webp);
     background-repeat: no-repeat;
